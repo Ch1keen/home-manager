@@ -39,9 +39,14 @@ in [
   pkgs.pwndbg
   pkgs.upx
   pkgs.metasploit
-  #pkgs.ronin
+  pkgs.ronin
   pkgs.exiftool
   pkgs.exiftags
+  pkgs.binwalk
+
+  # Password Cracker
+  pkgs.hashcat
+  pkgs.john
 
   # Virtualisation
   pkgs.qemu
