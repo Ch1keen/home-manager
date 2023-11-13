@@ -43,6 +43,7 @@ in [
   pkgs.exiftool
   pkgs.exiftags
   pkgs.binwalk
+  pkgs.socat
 
   # Password Cracker
   pkgs.hashcat
