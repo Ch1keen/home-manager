@@ -29,6 +29,8 @@ in [
   pkgs.chicken
   pkgs.nodejs
   pkgs.php
+  pkgs.purescript
+  pkgs.deno
 
   # Web Development
   pkgs.static-web-server
