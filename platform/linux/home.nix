@@ -3,6 +3,7 @@
 let
   basic_packages = import ../../src/packages.nix { inherit pkgs; };
   clang_packages = import ../../src/clang.nix { inherit pkgs; };
+  font_packages  = import ../../src/fonts.nix { inherit pkgs; };
 in {
 
   imports = [ ../light.nix ];
@@ -34,7 +35,7 @@ in {
     # Radio Signal
     #pkgs.gqrx
     #pkgs.sigdigger
-  ] ++ basic_packages ++ clang_packages;
+  ] ++ basic_packages ++ clang_packages ++ font_packages;
 
   # Korean Language
   home.sessionVariables = {

@@ -1,13 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
-  # for python
-  python-with-my-packages = pkgs.python311.withPackages (import ../../src/python-packages.nix);
-
-  # for ruby
-  ruby-with-my-packages = pkgs.ruby_3_2.withPackages (import ../../src/ruby-packages.nix);
-
   basic-packages = import ../../src/packages.nix { inherit pkgs; };
+  font_packages  = import ../../src/fonts.nix { inherit pkgs; };
 in
  {
   # Home Manager needs a bit of information about you and the
