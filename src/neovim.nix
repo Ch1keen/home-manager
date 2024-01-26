@@ -30,6 +30,8 @@
     set tabstop=2
     set shiftwidth=0
     filetype plugin indent on
+    set spelllang=en_us
+    set spell
 
     autocmd BufWritePre * :%s/\s\+$//e
 
