@@ -4,6 +4,7 @@
   programs.tmux.enable = true;
   programs.tmux.tmuxinator.enable = true;
   programs.tmux.shell = "${pkgs.zsh}/bin/zsh";
+  #programs.tmux.shell = "${pkgs.fish}/bin/fish";
   programs.tmux.terminal = "screen-256color";
   programs.tmux.extraConfig = "set -g mouse on";
   programs.tmux.plugins = with pkgs.tmuxPlugins; [

@@ -31,6 +31,7 @@ in
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
+    #enableFishIntegration = true;
     nix-direnv.enable = true;
   };
 
@@ -57,6 +58,9 @@ in
       theme = "fino-time";
     };
   };
+  #programs.fish.enable = true;
+  #programs.starship.enable = true;
+  #programs.starship.enableFishIntegration = true;
 
   # Modern Unix
   programs.bat.enable = true;
@@ -72,20 +76,22 @@ in
   programs.opam = {
     enable = true;
     enableZshIntegration = true;
+    #enableFishIntegration = true;
   };
 
   # rbenv
   programs.rbenv = {
     enable = true;
     enableZshIntegration = true;
+    #enableFishIntegration = true;
     plugins = [
       {
         name = "ruby-build";
         src = pkgs.fetchFromGitHub {
           owner = "rbenv";
           repo = "ruby-build";
-          rev = "v20230330";
-          hash = "sha256-0v6ub6Q/IdSfNzB7vv3icpYMC8bRF0bDmlNd1Q+4sys=";
+          rev = "v20240119";
+          hash = "sha256-oJdMAURkjeKUXFRqPf39I1ipcELw5BYQqAZPR9/vTq8=";
         };
       }
     ];
