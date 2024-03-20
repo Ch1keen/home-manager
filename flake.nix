@@ -7,13 +7,18 @@
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, darwin, ... }: {
+  outputs = { nixpkgs, home-manager, darwin, nixvim, ... }: {
     # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen'
     homeConfigurations.ch1keen = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -23,7 +28,19 @@
     # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen-light'
     homeConfigurations.ch1keen-light = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ platform/light.nix ] ;
+      modules = [
+        platform/light.nix
+        nixvim.homeManagerModules.nixvim
+        {
+          programs.nixvim.enable = true;
+	  programs.nixvim.colorschemes.tokyonight.enable = true;
+
+	  programs.nixvim.plugins.airline.enable = true;
+	  programs.nixvim.plugins.rainbow-delimiters.enable = true;
+	  programs.nixvim.plugins.telescope.enable = true;
+	  programs.nixvim.plugins.treesitter.enable = true;
+        }
+      ];
     };
 
     # darwin-rebuild switch --flake ~/.config/nix-darwin/

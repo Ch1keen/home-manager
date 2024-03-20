@@ -22,7 +22,7 @@ in
   home.packages = basic_packages;
 
   imports = [
-    ../src/neovim.nix
+    #../src/neovim.nix
     ../src/tmux.nix
   ];
 
