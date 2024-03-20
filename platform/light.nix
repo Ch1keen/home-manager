@@ -43,7 +43,7 @@ in
   # ZSH Shell
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
@@ -68,7 +68,6 @@ in
   programs.ripgrep.enable = true;
   programs.jq.enable = true;
   programs.eza.enable = true;
-  programs.eza.enableAliases = true;
   programs.eza.icons = true;
   programs.less.enable = true;
 
