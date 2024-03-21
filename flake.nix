@@ -36,8 +36,16 @@
 	  programs.nixvim.colorschemes.tokyonight.enable = true;
 
 	  programs.nixvim.plugins.airline.enable = true;
+	  programs.nixvim.plugins.neo-tree.enable = true;
+	  programs.nixvim.plugins.nix.enable = true;
+	  programs.nixvim.plugins.nvim-autopairs.enable = true;
+	  programs.nixvim.plugins.nvim-autopairs.checkTs = true;
 	  programs.nixvim.plugins.rainbow-delimiters.enable = true;
 	  programs.nixvim.plugins.telescope.enable = true;
+          programs.nixvim.plugins.telescope.keymaps = {
+            "<leader>ff" = "find_files";
+            "<leader>fg" = "live_grep";
+          };
 	  programs.nixvim.plugins.treesitter.enable = true;
         }
       ];
