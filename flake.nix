@@ -70,6 +70,7 @@
             servers = {
               clangd.enable = true;
               nixd.enable = true;
+              pyright.enable = true;
               solargraph.enable = true;
               ocamllsp.enable = true;
             };
