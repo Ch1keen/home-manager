@@ -22,7 +22,11 @@
     # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen'
     homeConfigurations.ch1keen = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ platform/linux/home.nix ];
+      modules = [
+        platform/linux/home.nix
+	nixvim.homeManagerModules.nixvim
+	src/nixvim.nix
+      ];
     };
 
     # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen-light'

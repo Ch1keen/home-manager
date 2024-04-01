@@ -38,28 +38,21 @@ in {
   ] ++ basic_packages ++ clang_packages ++ font_packages;
 
   # Korean Language
-  home.sessionVariables = {
-    GTK_IM_MODULE = "kime";
-    QT_IM_MODULE = "kime";
-    QT4_IM_MODULE = "kime";
-    XMODIFIERS = "@im=kime";
-  };
-
   i18n.inputMethod.enabled = "kime";
-  i18n.inputMethod.kime.config = {
-    daemon = {
-      modules = ["Xim" "Indicator"];
-    };
-    indicator = {
-      icon_color = "White";
-    };
-    engine = {
-      hangul = {
-        layout = "sebeolsik-3-90";
-      };
-    };
-    global_hotkeys.S-Space.behavior.Toggle = ["Hangul" "Latin"];
-  };
+  i18n.inputMethod.kime.extraConfig = ''
+    daemon:
+      modules: [Xim,Indicator]
+
+    indicator:
+      icon_color: White
+
+    engine:
+      hangul:
+        layout: sebeolsik-3-90
+        #layout: sebeolsik-3sin-p2
+
+    #global_hotkeys.S-Space.behavior.Toggle = ["Hangul" "Latin"];
+  '';
 
   # bluetooth
   services.blueman-applet.enable = true;
