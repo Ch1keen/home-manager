@@ -63,6 +63,7 @@ in {
   # Alacritty
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
+    shell = "${pkgs.fish}/bin/fish";
     font.size = 8;
   };
 
