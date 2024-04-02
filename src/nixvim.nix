@@ -36,12 +36,15 @@
 
     servers = {
       clangd.enable = true;
+      html.enable = true;
       nixd.enable = true;
       pyright.enable = true;
+      rust-analyzer.enable = true;
       solargraph.enable = true;
       ocamllsp.enable = true;
     };
   };
+  programs.nixvim.plugins.lsp-lines.enable = true;
   programs.nixvim.plugins.lint = {
     enable = true;
   };
