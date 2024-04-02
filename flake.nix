@@ -19,6 +19,25 @@
   };
 
   outputs = { nixpkgs, home-manager, darwin, nixvim, ... }: {
+    # nixos-rebuild switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen'
+    nixosConfigurations.ch1keen = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        platform/linux/configuration.nix
+
+        nixvim.nixosModules.nixvim
+        src/nixvim.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.users.ch1keen = import ./platform/linux/home.nix;
+        }
+      ];
+    };
+
     # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen'
     homeConfigurations.ch1keen = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
