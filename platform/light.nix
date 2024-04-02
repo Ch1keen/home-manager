@@ -22,7 +22,6 @@ in
   home.packages = basic_packages;
 
   imports = [
-    #../src/neovim.nix
     ../src/tmux.nix
   ];
 
@@ -30,7 +29,7 @@ in
   programs.home-manager.enable = true;
   programs.direnv = {
     enable = true;
-    enableZshIntegration = true;
+    #enableZshIntegration = true;
     #enableFishIntegration = true;
     nix-direnv.enable = true;
   };
@@ -41,26 +40,27 @@ in
   programs.yt-dlp.enable = true;
 
   # ZSH Shell
-  programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      "g++" = "c++";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "command-not-found"
-      ];
-      theme = "fino-time";
-    };
-  };
-  #programs.fish.enable = true;
-  #programs.starship.enable = true;
-  #programs.starship.enableFishIntegration = true;
+  #programs.zsh = {
+  #  enable = true;
+  #  autosuggestion.enable = true;
+  #  enableCompletion = true;
+  #  syntaxHighlighting.enable = true;
+  #  shellAliases = {
+  #    "g++" = "c++";
+  #  };
+  #  oh-my-zsh = {
+  #    enable = true;
+  #    plugins = [
+  #      "git"
+  #      "command-not-found"
+  #    ];
+  #    theme = "fino-time";
+  #  };
+  #};
+
+  programs.fish.enable = true;
+  programs.starship.enable = true;
+  programs.starship.enableFishIntegration = true;
 
   # Modern Unix
   programs.bat.enable = true;
@@ -68,21 +68,22 @@ in
   programs.ripgrep.enable = true;
   programs.jq.enable = true;
   programs.eza.enable = true;
+  programs.eza.enableFishIntegration = true;
   programs.eza.icons = true;
   programs.less.enable = true;
 
   # opam (OCaml)
   programs.opam = {
     enable = true;
-    enableZshIntegration = true;
-    #enableFishIntegration = true;
+    #enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 
   # rbenv
   programs.rbenv = {
     enable = true;
-    enableZshIntegration = true;
-    #enableFishIntegration = true;
+    #enableZshIntegration = true;
+    enableFishIntegration = true;
     plugins = [
       {
         name = "ruby-build";
@@ -96,22 +97,6 @@ in
     ];
   };
 
-  # nnn
-  programs.nnn = {
-    enable = true;
-    package = pkgs.nnn.override ({ withNerdIcons = true; });
-    extraPackages = [ pkgs.viu ];
-    plugins.mappings = {
-      p = "preview-tui";
-    };
-    plugins.src = (pkgs.fetchFromGitHub {
-      owner = "jarun";
-      repo = "nnn";
-      rev = "v4.6";
-      sha256 = "sha256-+EAKOXZp1kxA2X3e16ItjPT7Sa3WZuP2oxOdXkceTIY=";
-    }) + "/plugins";
-  };
-
   # git
   programs.git.enable = true;
   programs.lazygit.enable = true;
@@ -120,7 +105,4 @@ in
   programs.git.userEmail = "gihoong7@gmail.com";
   programs.git.userName = "Ch1keen";
   programs.git.delta.enable = true;
-
-  # irssi
-  programs.irssi.enable = true;
 }
