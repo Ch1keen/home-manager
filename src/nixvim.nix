@@ -50,10 +50,11 @@
   };
 
   programs.nixvim.plugins.airline.enable = true;
+  programs.nixvim.plugins.indent-blankline.enable = true;
   programs.nixvim.plugins.neo-tree.enable = true;
   programs.nixvim.plugins.nix.enable = true;
   programs.nixvim.plugins.nvim-autopairs.enable = true;
-  programs.nixvim.plugins.nvim-autopairs.checkTs = true;
+  programs.nixvim.plugins.nvim-autopairs.settings.check_ts = true;
   programs.nixvim.plugins.rainbow-delimiters.enable = true;
   programs.nixvim.plugins.telescope.enable = true;
   programs.nixvim.plugins.telescope.keymaps = {
