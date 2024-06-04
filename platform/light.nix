@@ -34,7 +34,7 @@ in
   programs.direnv = {
     enable = true;
     #enableZshIntegration = true;
-    #enableFishIntegration = true;
+    #enableFishIntegration = true; (It's enabled by default, and it's read only.)
     nix-direnv.enable = true;
   };
 
@@ -61,7 +61,6 @@ in
   #    theme = "fino-time";
   #  };
   #};
-
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
