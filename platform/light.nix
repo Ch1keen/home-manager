@@ -21,6 +21,10 @@ in
 
   home.packages = basic_packages;
 
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   imports = [
     ../src/tmux.nix
   ];
