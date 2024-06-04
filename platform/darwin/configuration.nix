@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   services.nix-daemon.enable = true;
-  nix.package = pkgs.nixVersions.unstable;
+  nix.package = pkgs.nixVersions.latest;
   nix.settings.sandbox = false;
   nix.extraOptions = ''
     build-users-group = nixbld
@@ -12,7 +12,7 @@
     name = "hanjeongjun";
     home = "/Users/hanjeongjun";
   };
-  programs.zsh.enable = true;
-  #programs.fish.enable = true;
+  #programs.zsh.enable = true;
+  programs.fish.enable = true;
   system.stateVersion = 4;
 }
