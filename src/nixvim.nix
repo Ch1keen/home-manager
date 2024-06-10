@@ -27,6 +27,7 @@
   programs.nixvim.colorschemes.tokyonight.enable = true;
 
   programs.nixvim.plugins.cmp.enable = true;
+  programs.nixvim.plugins.cmp-buffer.enable = true;
   programs.nixvim.plugins.cmp-nvim-lsp.enable = true;
   programs.nixvim.plugins.cmp-path.enable = true;
   programs.nixvim.plugins.cmp-treesitter.enable = true;
@@ -50,12 +51,16 @@
   };
 
   programs.nixvim.plugins.airline.enable = true;
+
   programs.nixvim.plugins.indent-blankline.enable = true;
   programs.nixvim.plugins.neo-tree.enable = true;
   programs.nixvim.plugins.nix.enable = true;
+
   programs.nixvim.plugins.nvim-autopairs.enable = true;
   programs.nixvim.plugins.nvim-autopairs.settings.check_ts = true;
+
   programs.nixvim.plugins.rainbow-delimiters.enable = true;
+
   programs.nixvim.plugins.telescope.enable = true;
   programs.nixvim.plugins.telescope.keymaps = {
     "<leader>ff" = "find_files";
