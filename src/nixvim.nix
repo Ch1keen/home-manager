@@ -1,7 +1,10 @@
+{ pkgs, ... }:
+
 {
   programs.nixvim.enable = true;
   programs.nixvim.extraConfigVim = ''
     set nu
+    set colorcolumn=80
 
     " Indentation
     " https://stackoverflow.com/questions/51995128/setting-autoindentation-to-spaces-in-neovim
@@ -38,7 +41,7 @@
       clangd.enable = true;
       html.enable = true;
       nixd.enable = true;
-      pyright.enable = true;
+      pylsp.enable = true;
       rust-analyzer.enable = true;
       solargraph.enable = true;
       ocamllsp.enable = true;
@@ -47,7 +50,17 @@
   programs.nixvim.plugins.lsp-lines.enable = true;
   programs.nixvim.plugins.lint = {
     enable = true;
+    lintersByFt = {
+      text = ["vale"];
+      markdown = ["vale"];
+      python = ["ruff"];
+    };
   };
+
+  programs.nixvim.extraPackages = with pkgs; [
+    vale
+    ruff
+  ];
 
   programs.nixvim.plugins.airline.enable = true;
   programs.nixvim.plugins.indent-blankline.enable = true;
