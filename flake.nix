@@ -54,6 +54,10 @@
         system = "x86_64-darwin";
         modules = [
           platform/darwin/configuration.nix
+
+          nixvim.nixDarwinModules.nixvim
+          src/nixvim.nix
+
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

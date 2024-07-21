@@ -35,8 +35,8 @@ in [
   #pkgs.gef  # python 3.10 ropper 1.13.8 marked as broken in darwin
   pkgs.pwndbg
   pkgs.upx
-  pkgs.metasploit
-  pkgs.ronin
+  #pkgs.metasploit
+  #pkgs.ronin
   pkgs.exiftool
   pkgs.exiftags
   pkgs.binwalk
@@ -52,7 +52,7 @@ in [
 
   # OCI(Open Container Initiative)
   pkgs.podman-compose
-  pkgs.buildah
+  #pkgs.buildah
   pkgs.podman-tui
 
   # Eye candy

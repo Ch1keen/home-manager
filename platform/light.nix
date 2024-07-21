@@ -21,6 +21,10 @@ in
 
   home.packages = basic_packages;
 
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   imports = [
     ../src/tmux.nix
   ];
@@ -89,8 +93,8 @@ in
         src = pkgs.fetchFromGitHub {
           owner = "rbenv";
           repo = "ruby-build";
-          rev = "v20240119";
-          hash = "sha256-oJdMAURkjeKUXFRqPf39I1ipcELw5BYQqAZPR9/vTq8=";
+          rev = "v20240530";
+          hash = "sha256-Wo66NNibJf1H3yZsDizGOyc206G1AAdU+8y6CF8wva4=";
         };
       }
     ];
