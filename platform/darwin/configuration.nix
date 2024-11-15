@@ -3,6 +3,7 @@
   services.nix-daemon.enable = true;
   nix.package = pkgs.nixVersions.latest;
   nix.settings.sandbox = false;
+  nix.settings.trusted-users = [ "hanjeongjun" ];
   nix.extraOptions = ''
     build-users-group = nixbld
     experimental-features = nix-command flakes

@@ -29,7 +29,6 @@ in {
     pkgs.ghidra
     #pkgs.burpsuite
     pkgs.radare2
-    pkgs.rizin
     pkgs.gef  # python3.10 ropper is broken on darwin
 
     # Radio Signal

@@ -43,9 +43,10 @@
       html.enable = true;
       nixd.enable = true;
       pylsp.enable = true;
-      rust-analyzer.enable = true;
+      rust_analyzer.enable = true;
+      rust_analyzer.installRustc = true;
+      rust_analyzer.installCargo = true;
       solargraph.enable = true;
-      ocamllsp.enable = true;
     };
   };
   programs.nixvim.plugins.lsp-lines.enable = true;
@@ -74,6 +75,7 @@
 
   programs.nixvim.plugins.rainbow-delimiters.enable = true;
 
+  programs.nixvim.plugins.web-devicons.enable = true;
   programs.nixvim.plugins.telescope.enable = true;
   programs.nixvim.plugins.telescope.keymaps = {
     "<leader>ff" = "find_files";

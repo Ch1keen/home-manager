@@ -72,7 +72,7 @@ in
   programs.jq.enable = true;
   programs.eza.enable = true;
   programs.eza.enableFishIntegration = true;
-  programs.eza.icons = true;
+  programs.eza.icons = "auto";
   programs.less.enable = true;
 
   # opam (OCaml)
@@ -93,7 +93,7 @@ in
         src = pkgs.fetchFromGitHub {
           owner = "rbenv";
           repo = "ruby-build";
-          rev = "v20240530";
+          rev = "v20240917";
           hash = "sha256-Wo66NNibJf1H3yZsDizGOyc206G1AAdU+8y6CF8wva4=";
         };
       }
