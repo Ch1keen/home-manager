@@ -43,24 +43,6 @@ in
   programs.go.enable = true;
   programs.yt-dlp.enable = true;
 
-  # ZSH Shell
-  #programs.zsh = {
-  #  enable = true;
-  #  autosuggestion.enable = true;
-  #  enableCompletion = true;
-  #  syntaxHighlighting.enable = true;
-  #  shellAliases = {
-  #    "g++" = "c++";
-  #  };
-  #  oh-my-zsh = {
-  #    enable = true;
-  #    plugins = [
-  #      "git"
-  #      "command-not-found"
-  #    ];
-  #    theme = "fino-time";
-  #  };
-  #};
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
@@ -78,26 +60,7 @@ in
   # opam (OCaml)
   programs.opam = {
     enable = true;
-    #enableZshIntegration = true;
     enableFishIntegration = true;
-  };
-
-  # rbenv
-  programs.rbenv = {
-    enable = true;
-    #enableZshIntegration = true;
-    enableFishIntegration = true;
-    plugins = [
-      {
-        name = "ruby-build";
-        src = pkgs.fetchFromGitHub {
-          owner = "rbenv";
-          repo = "ruby-build";
-          rev = "v20240917";
-          hash = "sha256-Wo66NNibJf1H3yZsDizGOyc206G1AAdU+8y6CF8wva4=";
-        };
-      }
-    ];
   };
 
   # git
