@@ -47,6 +47,13 @@ in
   programs.starship.enable = true;
   programs.starship.enableFishIntegration = true;
 
+  programs.zellij.enable = true;
+  programs.zellij.enableFishIntegration = true;
+  programs.zellij.settings = {
+    default_shell = "fish";
+    simplified_ui = true;
+  };
+
   # Modern Unix
   programs.bat.enable = true;
   programs.bat.extraPackages = with pkgs.bat-extras; [ batgrep prettybat ];
