@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   basic_packages = import ../../src/packages.nix { inherit pkgs; };

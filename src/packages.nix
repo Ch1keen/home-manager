@@ -2,7 +2,7 @@
 
 let
   # for python
-  python-with-my-packages = pkgs.python311.withPackages (import ./python-packages.nix);
+  python-with-my-packages = pkgs.python312.withPackages (import ./python-packages.nix);
 
   # for ruby
   ruby-with-my-packages = pkgs.ruby.withPackages (import ./ruby-packages.nix);
@@ -34,8 +34,8 @@ in [
 
   # Hacking Related
   #pkgs.one_gadget   # Collides in dependency hell
-  pkgs.gef  # python 3.10 ropper 1.13.8 marked as broken in darwin
-  pkgs.pwndbg
+  pkgs.gef           # python 3.10 ropper 1.13.8 marked as broken in darwin
+  #pkgs.pwndbg       # Would use `nix shell github:pwndbg/pwndbg` instead
   pkgs.upx
   #pkgs.metasploit
   #pkgs.ronin
@@ -48,7 +48,7 @@ in [
 
   # Password Cracker
   pkgs.hashcat
-  pkgs.john
+  #pkgs.john
 
   # Virtualisation
   pkgs.qemu

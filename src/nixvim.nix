@@ -42,7 +42,9 @@
       clangd.enable = true;
       html.enable = true;
       nixd.enable = true;
-      pylsp.enable = true;
+      # Python
+      pylyzer.enable = true;
+      ruff.enable = true;
       rust_analyzer.enable = true;
       rust_analyzer.installRustc = true;
       rust_analyzer.installCargo = true;

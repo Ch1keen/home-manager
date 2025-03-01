@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   basic_packages = import ../src/packages.nix { inherit pkgs; };
@@ -26,7 +26,8 @@ in
   ];
 
   imports = [
-    ../src/tmux.nix
+    #../src/tmux.nix
+    ../src/neovide.nix
   ];
 
   # Let Home Manager install and manage itself.
@@ -53,6 +54,7 @@ in
     default_shell = "fish";
     simplified_ui = true;
   };
+
 
   # Modern Unix
   programs.bat.enable = true;
