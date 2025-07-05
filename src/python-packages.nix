@@ -15,7 +15,7 @@ python-packages: with python-packages; [
 
   # Hacking Related
   pwntools
-  #angr
+  angr
   unicorn
   qiling
   r2pipe

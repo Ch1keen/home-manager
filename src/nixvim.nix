@@ -43,11 +43,13 @@
       html.enable = true;
       nixd.enable = true;
       # Python
-      pylyzer.enable = true;
+      basedpyright.enable = true;
       ruff.enable = true;
+      # Rust
       rust_analyzer.enable = true;
       rust_analyzer.installRustc = true;
       rust_analyzer.installCargo = true;
+      # Ruby
       solargraph.enable = true;
     };
   };
