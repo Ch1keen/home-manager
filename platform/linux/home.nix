@@ -26,10 +26,11 @@ in {
 
     # Hacking Related
     pkgs.zap
-    pkgs.ghidra
+    #pkgs.ghidra
     #pkgs.burpsuite
     pkgs.radare2
     pkgs.gef  # python3.10 ropper is broken on darwin
+    pkgs.wireshark
 
     # Radio Signal
     #pkgs.gqrx
@@ -37,21 +38,28 @@ in {
   ] ++ basic_packages ++ clang_packages ++ font_packages;
 
   # Korean Language
-  i18n.inputMethod.enabled = "kime";
-  i18n.inputMethod.kime.extraConfig = ''
-    daemon:
-      modules: [Xim,Indicator]
+  #i18n.inputMethod.enabled = "kime";
+  #i18n.inputMethod.kime.extraConfig = ''
+  #  daemon:
+  #    modules: [Xim,Indicator]
 
-    indicator:
-      icon_color: White
+  #  indicator:
+  #    icon_color: White
 
-    engine:
-      hangul:
-        layout: sebeolsik-3-90
-        #layout: sebeolsik-3sin-p2
-
-    #global_hotkeys.S-Space.behavior.Toggle = ["Hangul" "Latin"];
-  '';
+  #  engine:
+  #    hangul:
+  #      layout: sebeolsik-3-90
+  #      #layout: sebeolsik-3sin-p2
+  #
+  #  global_hotkeys.S-Space.behavior.Toggle = ["Hangul" "Latin"];
+  #'';
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-hangul
+      fcitx5-gtk
+    ];
+  };
 
   # bluetooth
   services.blueman-applet.enable = true;

@@ -19,4 +19,10 @@ python-packages: with python-packages; [
   unicorn
   qiling
   r2pipe
+  can
+
+  # Bluetooth
+  pybluez
+  hexdump
+  scapy
 ]
