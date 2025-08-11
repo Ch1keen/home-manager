@@ -116,7 +116,6 @@
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
   #hardware.pulseaudio.enable = true;
   #hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
