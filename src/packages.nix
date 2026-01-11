@@ -2,7 +2,7 @@
 
 let
   # for python
-  python-with-my-packages = pkgs.python312.withPackages (import ./python-packages.nix);
+  python-with-my-packages = pkgs.python314.withPackages (import ./python-packages.nix);
 
   # for ruby
   ruby-with-my-packages = pkgs.ruby.withPackages (import ./ruby-packages.nix);
