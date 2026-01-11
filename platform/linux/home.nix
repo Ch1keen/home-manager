@@ -54,7 +54,9 @@ in {
   #  global_hotkeys.S-Space.behavior.Toggle = ["Hangul" "Latin"];
   #'';
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
+    fcitx5.fcitx5-with-addons = pkgs.kdePackages.fcitx5-with-addons;
     fcitx5.addons = with pkgs; [
       fcitx5-hangul
       fcitx5-gtk

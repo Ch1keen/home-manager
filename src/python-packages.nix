@@ -23,6 +23,7 @@ python-packages: with python-packages; [
 
   # Bluetooth
   pybluez
+  pygatt
   hexdump
   scapy
 ]

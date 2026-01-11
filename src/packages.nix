@@ -7,6 +7,7 @@ let
   # for ruby
   ruby-with-my-packages = pkgs.ruby.withPackages (import ./ruby-packages.nix);
 
+  # Rizin!
   rizin-packages = pkgs.rizin.withPlugins (ps: with ps; [ jsdec rz-ghidra sigdb ]);
 in [
   pkgs.fd
@@ -20,6 +21,7 @@ in [
   # Programming Languages
   pkgs.ghc
   python-with-my-packages
+  pkgs.uv
   ruby-with-my-packages
   pkgs.rustup
   pkgs.guile_3_0
