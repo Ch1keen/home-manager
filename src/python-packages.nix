@@ -18,4 +18,10 @@ python-packages: with python-packages; [
   angr
   unicorn
   r2pipe
+  can
+
+  # Bluetooth
+  pybluez
+  hexdump
+  scapy
 ]

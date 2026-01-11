@@ -25,6 +25,9 @@
   # RTL-SDR
   hardware.rtl-sdr.enable = true;
 
+  # Ubertooth
+  hardware.ubertooth.enable = true;
+
   # Enable networking & bluetooth
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
@@ -77,32 +80,38 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.desktopManager = {
-    xterm.enable = false;
-    xfce = {
-      enable = true;
-      noDesktop = true;
-      enableXfwm = false;
-    };
-  };
-  services.xserver.displayManager.defaultSession = "xfce+i3";
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    extraPackages = with pkgs; [
-      dmenu
-      betterlockscreen
-      i3status
-    ];
-  };
+  #services.xserver.desktopManager = {
+  #  xterm.enable = false;
+  #  xfce = {
+  #    enable = true;
+  #    noDesktop = true;
+  #    enableXfwm = false;
+  #  };
+  #};
+  #services.displayManager.defaultSession = "xfce+i3";
+  #services.xserver.windowManager.i3 = {
+  #  enable = true;
+  #  extraPackages = with pkgs; [
+  #    dmenu
+  #    betterlockscreen
+  #    i3status
+  #  ];
+  #};
+
+  # Enable the KDE Plasma Desktop Environment.
+  #services.xserver.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.wayland.enable = true;
+  #services.desktopManager.plasma6.enable = true;
 
   # XRDP
-  #services.xrdp.enable = true;
-  #services.xrdp.defaultWindowManager = "xfce4-session";
-  #services.xrdp.openFirewall = true;
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "xfce4-session";
+  services.xrdp.openFirewall = true;
 
   # Enable the XFCE Desktop Environment.
-  #services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -116,7 +125,7 @@
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  #sound.enable = true;
   #hardware.pulseaudio.enable = true;
   #hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
@@ -142,10 +151,11 @@
   users.users.ch1keen = {
     isNormalUser = true;
     description = "Ch1keen";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "scanner" "lp" "plugdev" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "ubertooth" "docker" "libvirtd" "kvm" "scanner" "lp" "plugdev" "adbusers" ];
     shell = pkgs.fish;
     packages = with pkgs; [
       firefox
+      can-utils
     #  thunderbird
     ];
   };
@@ -173,17 +183,23 @@
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.podman.defaultNetwork.settings.dns_enable = true;
-  programs.dconf.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
   programs.fish.enable = true;
   services.tailscale.enable = true;
   programs.adb.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.openFirewall = true;
 
   # Open ports in the firewall.
-  #networking.firewall.allowedTCPPortRanges = [ { from = 3000; to = 9000; } ];
+  networking.firewall.allowedTCPPortRanges = [ { from = 3000; to = 9000; } ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

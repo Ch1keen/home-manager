@@ -3,6 +3,6 @@
 [
   # Fonts
   pkgs.d2coding
-  pkgs.nerdfonts
+  pkgs.nerd-fonts.jetbrains-mono
   pkgs.nanum
 ]
