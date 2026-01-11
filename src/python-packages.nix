@@ -17,6 +17,5 @@ python-packages: with python-packages; [
   pwntools
   angr
   unicorn
-  qiling
   r2pipe
 ]

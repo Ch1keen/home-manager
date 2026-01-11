@@ -65,6 +65,8 @@ in
   programs.eza.enableFishIntegration = true;
   programs.eza.icons = "auto";
   programs.less.enable = true;
+  programs.delta.enable = true;
+  programs.delta.enableGitIntegration = true;
 
   # opam (OCaml)
   programs.opam = {
@@ -77,7 +79,6 @@ in
   programs.lazygit.enable = true;
   programs.gitui.enable = true;
 
-  programs.git.userEmail = "gihoong7@gmail.com";
-  programs.git.userName = "Ch1keen";
-  programs.git.delta.enable = true;
+  programs.git.settings.user.email = "gihoong7@gmail.com";
+  programs.git.settings.user.name = "Ch1keen";
 }
