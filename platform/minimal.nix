@@ -37,9 +37,8 @@ in
 
   # Other programs
   programs.helix.enable = true;
-  programs.neovim.enable = true;
   programs.go.enable = true;
-  programs.yt-dlp.enable = true;
+  #programs.yt-dlp.enable = true;
 
   programs.fish.enable = true;
 
