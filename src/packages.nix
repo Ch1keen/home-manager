@@ -9,7 +9,6 @@ let
 
   rizin-packages = pkgs.rizin.withPlugins (ps: with ps; [ jsdec rz-ghidra sigdb ]);
 in [
-  pkgs.fd
   pkgs.file
   pkgs.unzip
   pkgs.wget
@@ -22,8 +21,6 @@ in [
   python-with-my-packages
   ruby-with-my-packages
   pkgs.rustup
-  pkgs.guile_3_0
-  pkgs.chicken
   pkgs.nodejs
   #pkgs.php
   pkgs.purescript
@@ -36,10 +33,10 @@ in [
   #pkgs.one_gadget   # Collides in dependency hell
   pkgs.gef           # python 3.10 ropper 1.13.8 marked as broken in darwin
   #pkgs.pwndbg       # Would use `nix shell github:pwndbg/pwndbg` instead
-  pkgs.upx
+  #pkgs.upx
   #pkgs.metasploit
   #pkgs.ronin
-  pkgs.exiftool
+  #pkgs.exiftool
   #pkgs.exiftags
   pkgs.binwalk
   pkgs.socat
@@ -47,7 +44,7 @@ in [
   rizin-packages
 
   # Password Cracker
-  pkgs.hashcat
+  #pkgs.hashcat
   #pkgs.john
 
   # Virtualisation
@@ -60,6 +57,5 @@ in [
   pkgs.podman-tui
 
   # Eye candy
-  pkgs.neofetch
   pkgs.htop
 ]

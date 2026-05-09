@@ -43,10 +43,21 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         platform/light.nix
-        nixvim.homeManagerModules.nixvim
+        nixvim.homeModules.nixvim
         src/nixvim.nix
       ];
     };
+
+    # home-manager switch --flake '/home/ch1keen/.config/nixpkgs#ch1keen-minimal'
+    homeConfigurations.ch1keen-minimal = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        platform/minimal.nix
+        nixvim.homeModules.nixvim
+        src/nixvim.nix
+      ];
+    };
+
 
     # darwin-rebuild switch --flake ~/.config/nix-darwin/
     darwinConfigurations = {

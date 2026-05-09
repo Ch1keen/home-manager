@@ -15,10 +15,7 @@ python-packages: with python-packages; [
 
   # Hacking Related
   pwntools
-  angr
-  unicorn
   r2pipe
-  can
 
   # Bluetooth
   pybluez
