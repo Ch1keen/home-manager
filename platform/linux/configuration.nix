@@ -22,8 +22,9 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # RTL-SDR
+  # SDRs
   hardware.rtl-sdr.enable = true;
+  hardware.hackrf.enable = true;
 
   # Ubertooth
   hardware.ubertooth.enable = true;
@@ -79,7 +80,7 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
   #services.xserver.desktopManager = {
   #  xterm.enable = false;
   #  xfce = {
@@ -99,19 +100,10 @@
   #};
 
   # Enable the KDE Plasma Desktop Environment.
-  #services.xserver.enable = true;
-  #services.displayManager.sddm.enable = true;
-  #services.displayManager.sddm.wayland.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-
-  # XRDP
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "xfce4-session";
-  services.xrdp.openFirewall = true;
-
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -129,7 +121,7 @@
   #hardware.pulseaudio.enable = true;
   #hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -160,7 +152,7 @@
     ];
   };
 
-  # Allow unfree packages
+  # Ah, flakes, have been an experimental feature for three years.
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -169,6 +161,8 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    wl-clipboard
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

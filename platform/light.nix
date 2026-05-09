@@ -53,6 +53,7 @@ in
   programs.zellij.settings = {
     default_shell = "fish";
     simplified_ui = true;
+    copy_command = "xclip -selection clipboard";
   };
 
 
