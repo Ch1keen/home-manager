@@ -38,7 +38,7 @@ in
   # Other programs
   programs.helix.enable = true;
   programs.go.enable = true;
-  #programs.yt-dlp.enable = true;
+  #programs.yt-dlp.enable = true;  # The yt-dlp requires Deno since 2026.
 
   programs.fish.enable = true;
 
